@@ -22,7 +22,11 @@
             <label class="form__label" for="name">お名前</label>
             <input class="form__text" type="text" name="name" placeholder="例：山田　太郎" value="{{ old('name') }}" required>
             @error('name')
-                <div class="error">{{ $messages }}</div>
+                <tr>
+                    <td>
+                        {{$errors->first('name')}}
+                    </td>
+                </tr>
             @enderror
         </div>
 
@@ -31,7 +35,11 @@
             <input class="form__text" type="email" name="email" placeholder="例: test@example.com"
                 value="{{ old('email') }}" required>
             @error('email')
-                <div class="error">{{ $messages }}</div>
+                <tr>
+                    <td>
+                        {{$errors->first('email')}}
+                    </td>
+                </tr>
             @enderror
         </div>
 
@@ -39,7 +47,11 @@
             <label class="form__label" for="password">パスワード:</label>
             <input class="form__text" type="password" name="password" placeholder="例: coachtech1106" required>
             @error('password')
-                <div class="error">{{ $messages }}</div>
+                <tr>
+                    <td>
+                        {{$errors->first('password')}}
+                    </td>
+                </tr>
             @enderror
         </div>
 

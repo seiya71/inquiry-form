@@ -21,5 +21,6 @@ Route::post('/contacts/confirm', [ContactController::class, 'confirm']);
 Route::post('/contacts', [ContactController::class, 'store']);
 Route::get('/index', [ContactController::class, 'contact']);
 Route::middleware('auth')->group(function () {
-    Route::get('/', [UserController::class, 'admin']);
+    Route::get('/admin', [UserController::class, 'admin']);
 });
+Route::post('/auth.register', [UserController::class, 'register']);

@@ -22,17 +22,25 @@
             <label class="login__label" for="email">メールアドレス:</label>
             <input class="login__text" type="email" name="email" placeholder="例: test@example.com"
                 value="{{ old('email') }}" required>
-            @error('email')
-                <div class="error">{{ $messages }}</div>
-            @enderror
+            @if ($errors->has('email'))
+                <tr>
+                    <td>
+                        {{$errors->first('email')}}
+                    </td>
+                </tr>
+            @endif
         </div>
 
         <div class="form-group">
             <label class="login__label" for="password">パスワード:</label>
             <input class="login__text" type="password" name="password" placeholder="例: coachtech1106" required>
-            @error('password')
-                <div class="error">{{ $messages }}</div>
-            @enderror
+            @if ($errors->has('password'))
+                <tr>
+                    <td>
+                        {{$errors->first('password')}}
+                    </td>
+                </tr>
+            @endif
         </div>
 
         <button type="submit" class="login-button">ログイン</button>
